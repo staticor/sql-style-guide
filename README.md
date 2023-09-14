@@ -328,6 +328,7 @@ select
     sum(charges.amount) as total_revenue
 from users
 inner join charges on users.id = charges.user_id
+group by 1
 
 -- Bad
 select
@@ -335,6 +336,7 @@ select
     sum(charges.amount) as total_revenue
 from users
 join charges on users.id = charges.user_id
+group by 1
 ```
 
 ### For join conditions, put the table that was referenced first immediately after the `on`
